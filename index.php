@@ -4,6 +4,14 @@
     <div class="container p-4">
         <div class="row">
             <div class="col-md-4">
+                <?php if (isset($_SESSION['message'])) { ?>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <?= $_SESSION['message'] ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <?php } ?>
                 <div class="card card-body">
                     <form action="save_task.php" method="POST">
                         <div class="form-group">
